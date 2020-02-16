@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <iomanip>
 
-
 Game* Game::s_pInstance = 0;
 
 // Game functions - DO NOT REMOVE ***********************************************
@@ -64,8 +63,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 				return false;
 			}
 
-			
-
 			//TheTextureManager::Instance()->load("../../Assets/textures/animate-alpha.png", "animate", m_pRenderer);
 			start();
 
@@ -92,7 +89,7 @@ void Game::start()
 {
 	m_currentSceneState = SceneState::NO_SCENE;
 
-	changeSceneState(SceneState::START_SCENE);
+	changeSceneState(SceneState::PLAY_SCENE);
 }
 
 SDL_Renderer * Game::getRenderer()
@@ -134,17 +131,9 @@ void Game::changeSceneState(SceneState newState)
 		
 		switch (m_currentSceneState)
 		{
-		case SceneState::START_SCENE:
-			m_currentScene = new StartScene();
-			std::cout << "start scene activated" << std::endl;
-			break;
-		case SceneState::LEVEL1_SCENE:
-			m_currentScene = new Level1Scene();
+		case SceneState::PLAY_SCENE:
+			m_currentScene = new PlayScene();
 			std::cout << "play scene activated" << std::endl;
-			break;
-		case SceneState::END_SCENE:
-			m_currentScene = new EndScene();
-			std::cout << "end scene activated" << std::endl;
 			break;
 		default:
 			std::cout << "default case activated" << std::endl;
@@ -183,8 +172,6 @@ void Game::clean()
 	TTF_Quit();
 
 	SDL_Quit();
-
-	
 }
 
 void Game::handleEvents()

@@ -18,9 +18,7 @@
 #include "Util.h"
 
 // Scenes
-#include "StartScene.h"
-#include "Level1Scene.h"
-#include "EndScene.h"
+#include "PlayScene.h"
 
 class Game
 {

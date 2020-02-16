@@ -1,40 +1,40 @@
-#include "StartScene.h"
+#include "PlayScene.h"
 #include "Game.h"
 #include <ctime>
 #include "GLM/gtx/string_cast.hpp"
 #include <algorithm>
 #include <iomanip>
 
-StartScene::StartScene()
+PlayScene::PlayScene()
 {
-	StartScene::start();
+	PlayScene::start();
 }
 
-StartScene::~StartScene()
+PlayScene::~PlayScene()
 {
 }
 
-void StartScene::draw()
+void PlayScene::draw()
 {
 	m_pStartLabel->draw();
 	m_pStartButton->draw();
 	
 }
 
-void StartScene::update()
+void PlayScene::update()
 {
 	m_pStartButton->setMousePosition(m_mousePosition);
 	m_pStartButton->ButtonClick();
 }
 
-void StartScene::clean()
+void PlayScene::clean()
 {
 	delete m_pStartLabel;
 	
 	removeAllChildren();
 }
 
-void StartScene::handleEvents()
+void PlayScene::handleEvents()
 {
 	int wheel = 0;
 	SDL_Event event;
@@ -82,12 +82,6 @@ void StartScene::handleEvents()
 			case SDLK_ESCAPE:
 				TheGame::Instance()->quit();
 				break;
-			case SDLK_1:
-				TheGame::Instance()->changeSceneState(SceneState::LEVEL1_SCENE);
-				break;
-			case SDLK_2:
-				TheGame::Instance()->changeSceneState(SceneState::END_SCENE);
-				break;
 			}
 			break;
 
@@ -98,7 +92,7 @@ void StartScene::handleEvents()
 }
 
 // this function is used for initialization
-void StartScene::start()
+void PlayScene::start()
 {
 	SDL_Color blue = { 0, 0, 255, 255 };
 	m_pStartLabel = new Label("Mail Pilot", "Dock51", 80, blue, 
@@ -111,7 +105,7 @@ void StartScene::start()
 	addChild(m_pStartButton);
 }
 
-glm::vec2 StartScene::getMousePosition()
+glm::vec2 PlayScene::getMousePosition()
 {
 	return m_mousePosition;
 }

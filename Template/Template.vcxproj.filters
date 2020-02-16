@@ -45,12 +45,6 @@
     <ClCompile Include="..\src\Label.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\StartScene.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\EndScene.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\DisplayObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -66,9 +60,6 @@
     <ClCompile Include="..\src\CollisionManager.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Level1Scene.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\StartButton.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
@@ -80,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="..\src\Island.cpp">
       <Filter>Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PlayScene.cpp">
+      <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,12 +94,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Label.h">
       <Filter>Game Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\StartScene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EndScene.h">
-      <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\DisplayObject.h">
       <Filter>Header Files</Filter>
@@ -134,9 +122,6 @@
     <ClInclude Include="..\src\SceneState.h">
       <Filter>Enums</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Level1Scene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\StartButton.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
@@ -151,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="..\src\Island.h">
       <Filter>Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PlayScene.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

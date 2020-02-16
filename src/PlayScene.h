@@ -1,18 +1,18 @@
 #pragma once
-#ifndef __START_SCENE__
-#define __START_SCENE__
+#ifndef __PLAY_SCENE__
+#define __PLAY_SCENE__
 
 #include "Scene.h"
 #include "Label.h"
 #include "StartButton.h"
 
-class StartScene : public Scene
+class PlayScene : public Scene
 {
 public:
 	// constructor
-	StartScene();
+	PlayScene();
 	// destructor
-	~StartScene();
+	~PlayScene();
 
 	// Inherited via Scene
 	virtual void draw() override;
@@ -31,7 +31,6 @@ private:
 
 	// private data member
 	glm::vec2 m_mousePosition;
-	
 };
 
 #endif /* defined (__START_SCENE__) */

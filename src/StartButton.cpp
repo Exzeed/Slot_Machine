@@ -21,7 +21,7 @@ bool StartButton::ButtonClick()
 	{
 		if(!m_isClicked)
 		{
-			Game::Instance()->changeSceneState(LEVEL1_SCENE);
+			std::cout << "button activated" << std::endl;
 			m_isClicked = true;
 		}
 		return true;
