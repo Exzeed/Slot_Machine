@@ -1,1 +1,1 @@
-Slot_Machine
+Slot_Machine in C++
