@@ -5,12 +5,10 @@ enum GameObjectType {
 	NONE = -1,
 	ISLAND,
 	PLAYER,
-	CLOUD,
-	BULLET,
-	ENEMY,
 	OCEAN,
 	PLANE,
 	START_BUTTON,
+	QUIT_BUTTON,
 	NUM_OF_TYPES
 };
 

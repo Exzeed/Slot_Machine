@@ -166,6 +166,7 @@
     <ClCompile Include="..\src\Label.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Plane.cpp" />
+    <ClCompile Include="..\src\QuitButton.cpp" />
     <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="..\src\SoundManager.cpp" />
     <ClCompile Include="..\src\StartButton.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="..\src\Label.h" />
     <ClInclude Include="..\src\Move.h" />
     <ClInclude Include="..\src\Plane.h" />
+    <ClInclude Include="..\src\QuitButton.h" />
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\SceneState.h" />
     <ClInclude Include="..\src\ShapeType.h" />

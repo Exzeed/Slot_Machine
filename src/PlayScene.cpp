@@ -18,6 +18,7 @@ void PlayScene::draw()
 {
 	m_pStartLabel->draw();
 	m_pStartButton->draw();
+	m_pQuitButton->draw();
 	
 }
 
@@ -25,6 +26,8 @@ void PlayScene::update()
 {
 	m_pStartButton->setMousePosition(m_mousePosition);
 	m_pStartButton->ButtonClick();
+	m_pQuitButton->setMousePosition(m_mousePosition);
+	m_pQuitButton->ButtonClick();
 }
 
 void PlayScene::clean()
@@ -55,6 +58,7 @@ void PlayScene::handleEvents()
 			{
 			case SDL_BUTTON_LEFT:
 				m_pStartButton->setMouseButtonClicked(true);
+				m_pQuitButton->setMouseButtonClicked(true);
 				break;
 			}
 
@@ -64,16 +68,13 @@ void PlayScene::handleEvents()
 			{
 			case SDL_BUTTON_LEFT:
 				m_pStartButton->setMouseButtonClicked(false);
+				m_pQuitButton->setMouseButtonClicked(false);
 				break;
 			}
 			break;
 		case SDL_MOUSEWHEEL:
 			wheel = event.wheel.y;
 			break;
-
-
-
-
 
 			
 		case SDL_KEYDOWN:
@@ -101,8 +102,12 @@ void PlayScene::start()
 	addChild(m_pStartLabel);
 
 	m_pStartButton = new StartButton();
-	m_pStartButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
+	m_pStartButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.8f));
 	addChild(m_pStartButton);
+
+	m_pQuitButton = new QuitButton();
+	m_pQuitButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.8f));
+	addChild(m_pQuitButton);
 }
 
 glm::vec2 PlayScene::getMousePosition()

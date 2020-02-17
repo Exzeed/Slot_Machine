@@ -5,6 +5,7 @@
 #include "Scene.h"
 #include "Label.h"
 #include "StartButton.h"
+#include "QuitButton.h"
 
 class PlayScene : public Scene
 {
@@ -28,9 +29,10 @@ private:
 	// Game Objects
 	Label* m_pStartLabel;
 	StartButton* m_pStartButton;
+	QuitButton* m_pQuitButton;
 
 	// private data member
 	glm::vec2 m_mousePosition;
 };
 
-#endif /* defined (__START_SCENE__) */
+#endif /* defined (__PLAY_SCENE__) */
