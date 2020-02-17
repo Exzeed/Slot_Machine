@@ -6,6 +6,7 @@
 #include "Label.h"
 #include "ResetButton.h"
 #include "QuitButton.h"
+#include "SpinButton.h"
 #include "Slot.h"
 
 class PlayScene : public Scene
@@ -31,6 +32,7 @@ private:
 	Label* m_pStartLabel;
 	ResetButton* m_pResetButton;
 	QuitButton* m_pQuitButton;
+	SpinButton* m_pSpinButton;
 	Slot* m_pSlotMachine;
 
 	// private data member

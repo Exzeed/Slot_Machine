@@ -4,11 +4,12 @@
 enum GameObjectType {
 	NONE = -1,
 	ISLAND,
-	PLAYER,
-	OCEAN,
 	SLOT,
+	REEL,
 	START_BUTTON,
 	QUIT_BUTTON,
+	RESET_BUTTON,
+	SPIN_BUTTON,
 	NUM_OF_TYPES
 };
 

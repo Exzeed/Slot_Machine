@@ -19,6 +19,7 @@ void PlayScene::draw()
 	m_pStartLabel->draw();
 	m_pResetButton->draw();
 	m_pQuitButton->draw();
+	m_pSpinButton->draw();
 	
 	m_pSlotMachine->draw();
 }
@@ -29,12 +30,13 @@ void PlayScene::update()
 	m_pResetButton->ButtonClick();
 	m_pQuitButton->setMousePosition(m_mousePosition);
 	m_pQuitButton->ButtonClick();
+	m_pSpinButton->setMousePosition(m_mousePosition);
+	m_pSpinButton->ButtonClick();
 }
 
 void PlayScene::clean()
 {
 	delete m_pStartLabel;
-	
 	removeAllChildren();
 }
 
@@ -59,6 +61,7 @@ void PlayScene::handleEvents()
 			case SDL_BUTTON_LEFT:
 				m_pResetButton->setMouseButtonClicked(true);
 				m_pQuitButton->setMouseButtonClicked(true);
+				m_pSpinButton->setMouseButtonClicked(true);
 				break;
 			case SDL_BUTTON_RIGHT:
 				Game::Instance()->changeSceneState(END_SCENE);
@@ -72,6 +75,7 @@ void PlayScene::handleEvents()
 			case SDL_BUTTON_LEFT:
 				m_pResetButton->setMouseButtonClicked(false);
 				m_pQuitButton->setMouseButtonClicked(false);
+				m_pSpinButton->setMouseButtonClicked(false);
 				break;
 			}
 			break;
@@ -101,12 +105,16 @@ void PlayScene::start()
 	addChild(m_pStartLabel);
 
 	m_pResetButton = new ResetButton();
-	m_pResetButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.9f));
+	m_pResetButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.2f, Config::SCREEN_HEIGHT * 0.9f));
 	addChild(m_pResetButton);
 
 	m_pQuitButton = new QuitButton();
-	m_pQuitButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.9f));
+	m_pQuitButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.8f, Config::SCREEN_HEIGHT * 0.9f));
 	addChild(m_pQuitButton);
+
+	m_pSpinButton= new SpinButton();
+	m_pSpinButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.9f));
+	addChild(m_pSpinButton);
 
 	m_pSlotMachine= new Slot();
 	addChild(m_pSlotMachine);

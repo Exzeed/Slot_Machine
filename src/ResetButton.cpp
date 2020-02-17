@@ -5,8 +5,8 @@ ResetButton::ResetButton()
 	// call super constructor
 	:Button(
 		"../Assets/textures/ResetButton.png",
-		"startButton",
-		START_BUTTON, glm::vec2(400.0f, 300.0f)), m_isClicked(false)
+		"resetButton",
+		RESET_BUTTON, glm::vec2(400.0f, 300.0f)), m_isClicked(false)
 {
 	
 }
