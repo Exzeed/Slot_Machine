@@ -4,7 +4,7 @@
 
 #include "Scene.h"
 #include "Label.h"
-#include "StartButton.h"
+#include "ResetButton.h"
 #include "QuitButton.h"
 #include "Slot.h"
 
@@ -29,7 +29,7 @@ public:
 private:
 	// Game Objects
 	Label* m_pStartLabel;
-	StartButton* m_pStartButton;
+	ResetButton* m_pResetButton;
 	QuitButton* m_pQuitButton;
 	Slot* m_pSlotMachine;
 

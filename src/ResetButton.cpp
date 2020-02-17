@@ -1,27 +1,27 @@
-#include "StartButton.h"
+#include "ResetButton.h"
 #include "Game.h"
 
-StartButton::StartButton()
+ResetButton::ResetButton()
 	// call super constructor
 	:Button(
-		"../Assets/textures/StartButton.png",
+		"../Assets/textures/ResetButton.png",
 		"startButton",
 		START_BUTTON, glm::vec2(400.0f, 300.0f)), m_isClicked(false)
 {
 	
 }
 
-StartButton::~StartButton()
+ResetButton::~ResetButton()
 {
 }
 
-bool StartButton::ButtonClick()
+bool ResetButton::ButtonClick()
 {
 	if (m_mouseOver() && m_mouseButtonClicked)
 	{
 		if(!m_isClicked)
 		{
-			Game::Instance()->changeSceneState(PLAY_SCENE);
+			Game::Instance()->changeSceneState(START_SCENE);
 			m_isClicked = true;
 		}
 		return true;

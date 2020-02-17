@@ -17,7 +17,7 @@ PlayScene::~PlayScene()
 void PlayScene::draw()
 {
 	m_pStartLabel->draw();
-	m_pStartButton->draw();
+	m_pResetButton->draw();
 	m_pQuitButton->draw();
 	
 	m_pSlotMachine->draw();
@@ -25,8 +25,8 @@ void PlayScene::draw()
 
 void PlayScene::update()
 {
-	m_pStartButton->setMousePosition(m_mousePosition);
-	m_pStartButton->ButtonClick();
+	m_pResetButton->setMousePosition(m_mousePosition);
+	m_pResetButton->ButtonClick();
 	m_pQuitButton->setMousePosition(m_mousePosition);
 	m_pQuitButton->ButtonClick();
 }
@@ -40,7 +40,6 @@ void PlayScene::clean()
 
 void PlayScene::handleEvents()
 {
-	int wheel = 0;
 	SDL_Event event;
 	while (SDL_PollEvent(&event))
 	{
@@ -58,28 +57,24 @@ void PlayScene::handleEvents()
 			switch (event.button.button)
 			{
 			case SDL_BUTTON_LEFT:
-				m_pStartButton->setMouseButtonClicked(true);
+				m_pResetButton->setMouseButtonClicked(true);
 				m_pQuitButton->setMouseButtonClicked(true);
 				break;
 			case SDL_BUTTON_RIGHT:
 				Game::Instance()->changeSceneState(END_SCENE);
 				break;
 			}
-
 			break;
+			
 		case SDL_MOUSEBUTTONUP:
 			switch (event.button.button)
 			{
 			case SDL_BUTTON_LEFT:
-				m_pStartButton->setMouseButtonClicked(false);
+				m_pResetButton->setMouseButtonClicked(false);
 				m_pQuitButton->setMouseButtonClicked(false);
 				break;
 			}
 			break;
-		case SDL_MOUSEWHEEL:
-			wheel = event.wheel.y;
-			break;
-
 			
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
@@ -105,9 +100,9 @@ void PlayScene::start()
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);
 
-	m_pStartButton = new StartButton();
-	m_pStartButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.9f));
-	addChild(m_pStartButton);
+	m_pResetButton = new ResetButton();
+	m_pResetButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.9f));
+	addChild(m_pResetButton);
 
 	m_pQuitButton = new QuitButton();
 	m_pQuitButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.9f));
