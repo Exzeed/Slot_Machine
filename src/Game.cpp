@@ -1,6 +1,6 @@
 #include "Game.h"
 #include <ctime>
-#include "GLM/gtx/string_cast.hpp"
+#include "glm/gtx/string_cast.hpp"
 #include <algorithm>
 #include <iomanip>
 
@@ -12,7 +12,6 @@ Game::Game() :
 	m_pWindow(NULL), m_pRenderer(NULL), m_currentFrame(0), m_currentScene(NULL), m_bRunning(true), m_currentSceneState(SceneState::NO_SCENE), m_frames(0)
 {
 	srand((unsigned)time(NULL));  // random seed
-
 	
 }
 
@@ -65,7 +64,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 			//TheTextureManager::Instance()->load("../../Assets/textures/animate-alpha.png", "animate", m_pRenderer);
 			start();
-
 		}
 		else 
 		{
@@ -89,7 +87,7 @@ void Game::start()
 {
 	m_currentSceneState = SceneState::NO_SCENE;
 
-	changeSceneState(SceneState::PLAY_SCENE);
+	changeSceneState(SceneState::START_SCENE);
 }
 
 SDL_Renderer * Game::getRenderer()
@@ -131,16 +129,23 @@ void Game::changeSceneState(SceneState newState)
 		
 		switch (m_currentSceneState)
 		{
+		case SceneState::START_SCENE:
+			m_currentScene = new StartScene();
+			std::cout << "start scene activated" << std::endl;
+			break;
 		case SceneState::PLAY_SCENE:
 			m_currentScene = new PlayScene();
 			std::cout << "play scene activated" << std::endl;
+			break;
+		case SceneState::END_SCENE:
+			m_currentScene = new EndScene();
+			std::cout << "end scene activated" << std::endl;
 			break;
 		default:
 			std::cout << "default case activated" << std::endl;
 			break;
 		}
 	}
-	
 }
 
 void Game::quit()
@@ -170,7 +175,6 @@ void Game::clean()
 	SDL_DestroyWindow(m_pWindow);
 
 	TTF_Quit();
-
 	SDL_Quit();
 }
 

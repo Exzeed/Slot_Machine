@@ -18,13 +18,13 @@
 #include "Util.h"
 
 // Scenes
+#include "StartScene.h"
 #include "PlayScene.h"
+#include "EndScene.h"
 
 class Game
 {
 public:
-	
-
 	static Game* Instance()
 	{
 		if (s_pInstance == nullptr)
@@ -87,4 +87,3 @@ private:
 typedef Game TheGame;
 
 #endif /* defined (__Game__) */
-

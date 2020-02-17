@@ -21,8 +21,8 @@ bool QuitButton::ButtonClick()
 	{
 		if(!m_isClicked)
 		{
-			TheGame::Instance()->quit();
 			m_isClicked = true;
+			TheGame::Instance()->quit();
 		}
 		return true;
 	}
@@ -33,5 +33,3 @@ bool QuitButton::ButtonClick()
 
 	return false;
 }
-
-

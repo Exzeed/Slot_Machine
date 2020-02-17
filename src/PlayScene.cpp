@@ -61,6 +61,9 @@ void PlayScene::handleEvents()
 				m_pStartButton->setMouseButtonClicked(true);
 				m_pQuitButton->setMouseButtonClicked(true);
 				break;
+			case SDL_BUTTON_RIGHT:
+				Game::Instance()->changeSceneState(END_SCENE);
+				break;
 			}
 
 			break;
@@ -97,7 +100,7 @@ void PlayScene::handleEvents()
 void PlayScene::start()
 {
 	SDL_Color yellow = { 255, 255, 0, 255 };
-	m_pStartLabel = new Label("Slot Machine", "Dock51", 80, yellow, 
+	m_pStartLabel = new Label("JACKPOT", "Consolas", 80, yellow, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.1f));
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);
