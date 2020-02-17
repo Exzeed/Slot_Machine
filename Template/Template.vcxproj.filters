@@ -78,6 +78,9 @@
     <ClCompile Include="..\src\QuitButton.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Slot.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -144,6 +147,9 @@
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\QuitButton.h">
+      <Filter>Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Slot.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
   </ItemGroup>

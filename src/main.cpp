@@ -1,3 +1,11 @@
+/* PROGRAM HEADER
+ * Name: Geethan Kanthasamy
+ * Number: 301033918
+ * Date: Feb 12 2020
+ * Description: A slot machine program made in C++ using sample code made in Javascript.
+ *					Uses graphics to enhance the experience.
+ */
+
 // Core Libraries
 #include <stdlib.h>
 #include <crtdbg.h>

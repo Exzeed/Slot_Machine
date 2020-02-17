@@ -6,6 +6,7 @@
 #include "Label.h"
 #include "StartButton.h"
 #include "QuitButton.h"
+#include "Slot.h"
 
 class PlayScene : public Scene
 {
@@ -30,6 +31,7 @@ private:
 	Label* m_pStartLabel;
 	StartButton* m_pStartButton;
 	QuitButton* m_pQuitButton;
+	Slot* m_pSlotMachine;
 
 	// private data member
 	glm::vec2 m_mousePosition;

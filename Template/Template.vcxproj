@@ -168,6 +168,7 @@
     <ClCompile Include="..\src\Plane.cpp" />
     <ClCompile Include="..\src\QuitButton.cpp" />
     <ClCompile Include="..\src\Scene.cpp" />
+    <ClCompile Include="..\src\Slot.cpp" />
     <ClCompile Include="..\src\SoundManager.cpp" />
     <ClCompile Include="..\src\StartButton.cpp" />
     <ClCompile Include="..\src\PlayScene.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\SceneState.h" />
     <ClInclude Include="..\src\ShapeType.h" />
+    <ClInclude Include="..\src\Slot.h" />
     <ClInclude Include="..\src\SoundManager.h" />
     <ClInclude Include="..\src\StartButton.h" />
     <ClInclude Include="..\src\PlayScene.h" />

@@ -7,6 +7,7 @@ enum GameObjectType {
 	PLAYER,
 	OCEAN,
 	PLANE,
+	SLOT,
 	START_BUTTON,
 	QUIT_BUTTON,
 	NUM_OF_TYPES

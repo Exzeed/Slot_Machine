@@ -1,7 +1,7 @@
 #include "PlayScene.h"
 #include "Game.h"
 #include <ctime>
-#include "GLM/gtx/string_cast.hpp"
+#include "glm/gtx/string_cast.hpp"
 #include <algorithm>
 #include <iomanip>
 
@@ -20,6 +20,7 @@ void PlayScene::draw()
 	m_pStartButton->draw();
 	m_pQuitButton->draw();
 	
+	m_pSlotMachine->draw();
 }
 
 void PlayScene::update()
@@ -95,19 +96,22 @@ void PlayScene::handleEvents()
 // this function is used for initialization
 void PlayScene::start()
 {
-	SDL_Color blue = { 0, 0, 255, 255 };
-	m_pStartLabel = new Label("Mail Pilot", "Dock51", 80, blue, 
-		glm::vec2(Config::SCREEN_WIDTH * 0.5f, 100.0f));
+	SDL_Color yellow = { 255, 255, 0, 255 };
+	m_pStartLabel = new Label("Slot Machine", "Dock51", 80, yellow, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.1f));
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);
 
 	m_pStartButton = new StartButton();
-	m_pStartButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.8f));
+	m_pStartButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.9f));
 	addChild(m_pStartButton);
 
 	m_pQuitButton = new QuitButton();
-	m_pQuitButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.8f));
+	m_pQuitButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.9f));
 	addChild(m_pQuitButton);
+
+	m_pSlotMachine= new Slot();
+	addChild(m_pSlotMachine);
 }
 
 glm::vec2 PlayScene::getMousePosition()

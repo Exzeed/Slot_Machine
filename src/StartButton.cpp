@@ -33,5 +33,3 @@ bool StartButton::ButtonClick()
 
 	return false;
 }
-
-
