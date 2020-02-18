@@ -103,25 +103,28 @@ void PlayScene::handleEvents()
 
 // this function is used for initialization
 void PlayScene::start()
-{
+{	
 	SDL_Color yellow = { 255, 255, 0, 255 };
-	m_pJackpotLabel = new Label("JACKPOT", "Consolas", 80, yellow, 
+	std::string jackpot= "Jackpot: " + std::to_string((SpinButton::jackpot));
+	m_pJackpotLabel = new Label(jackpot, "Consolas", 80, yellow, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.1f));
 	m_pJackpotLabel->setParent(this);
 	addChild(m_pJackpotLabel);
 
 	SDL_Color black = { 0, 0, 0, 255 };
-	m_pMoneyLabel = new Label("Player Money", "Consolas", 36, black, 
-		glm::vec2(Config::SCREEN_WIDTH * 0.2f, Config::SCREEN_HEIGHT * 0.2f));
+	std::string money= "Player Money: " + std::to_string((SpinButton::playerMoney));
+	m_pMoneyLabel = new Label(money, "Consolas", 36, black, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.25f, Config::SCREEN_HEIGHT * 0.2f));
 	m_pMoneyLabel->setParent(this);
 	addChild(m_pMoneyLabel);
 
-	m_pBetLabel = new Label("Bet Amount", "Consolas", 36, black, 
+	std::string bet= "Bet Amount: " + std::to_string((SpinButton::playerBet));
+	m_pBetLabel = new Label(bet, "Consolas", 36, black, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.2f, Config::SCREEN_HEIGHT * 0.8f));
 	m_pBetLabel->setParent(this);
 	addChild(m_pBetLabel);
 
-	m_pResultLabel = new Label("Result", "Consolas", 36, black, 
+	m_pResultLabel = new Label("Result: ", "Consolas", 36, black, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.8f));
 	m_pResultLabel->setParent(this);
 	addChild(m_pResultLabel);
