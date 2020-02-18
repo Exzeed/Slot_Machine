@@ -25,6 +25,9 @@
     <Filter Include="Enums">
       <UniqueIdentifier>{c00e61a2-9515-4297-a699-76a9a5f3005e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Objects\Buttons">
+      <UniqueIdentifier>{fc859181-3224-4649-a9c1-11caec25a315}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -57,23 +60,11 @@
     <ClCompile Include="..\src\TextureManager.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\CollisionManager.cpp">
-      <Filter>Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\StartButton.cpp">
-      <Filter>Game Objects</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Button.cpp">
-      <Filter>Game Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Island.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\PlayScene.cpp">
       <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\QuitButton.cpp">
-      <Filter>Game Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Slot.cpp">
       <Filter>Game Objects</Filter>
@@ -84,10 +75,19 @@
     <ClCompile Include="..\src\EndScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\QuitButton.cpp">
+      <Filter>Game Objects\Buttons</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\ResetButton.cpp">
-      <Filter>Game Objects</Filter>
+      <Filter>Game Objects\Buttons</Filter>
     </ClCompile>
     <ClCompile Include="..\src\SpinButton.cpp">
+      <Filter>Game Objects\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StartButton.cpp">
+      <Filter>Game Objects\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Reel.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,9 +113,6 @@
     <ClInclude Include="..\src\DisplayObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\CollisionManager.h">
-      <Filter>Managers</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\FontManager.h">
       <Filter>Managers</Filter>
     </ClInclude>
@@ -137,20 +134,11 @@
     <ClInclude Include="..\src\SceneState.h">
       <Filter>Enums</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\StartButton.h">
-      <Filter>Game Objects</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Button.h">
-      <Filter>Game Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Island.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\PlayScene.h">
       <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\QuitButton.h">
-      <Filter>Game Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Slot.h">
       <Filter>Game Objects</Filter>
@@ -161,10 +149,19 @@
     <ClInclude Include="..\src\EndScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\QuitButton.h">
+      <Filter>Game Objects\Buttons</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\ResetButton.h">
-      <Filter>Game Objects</Filter>
+      <Filter>Game Objects\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="..\src\SpinButton.h">
+      <Filter>Game Objects\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StartButton.h">
+      <Filter>Game Objects\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Reel.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
   </ItemGroup>

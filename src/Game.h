@@ -14,8 +14,8 @@
 // Game Managers
 #include "Config.h"
 #include "TextureManager.h"
-#include "CollisionManager.h"
 #include "Util.h"
+#include "SoundManager.h"
 
 // Scenes
 #include "StartScene.h"

@@ -16,12 +16,19 @@ PlayScene::~PlayScene()
 
 void PlayScene::draw()
 {
-	m_pStartLabel->draw();
+	m_pJackpotLabel->draw();
+	m_pMoneyLabel->draw();
+	m_pBetLabel->draw();
+	m_pResultLabel->draw();
+	
 	m_pResetButton->draw();
 	m_pQuitButton->draw();
 	m_pSpinButton->draw();
 	
 	m_pSlotMachine->draw();
+	m_pReelLeft->draw();
+	m_pReelMid->draw();
+	m_pReelRight->draw();
 }
 
 void PlayScene::update()
@@ -36,7 +43,6 @@ void PlayScene::update()
 
 void PlayScene::clean()
 {
-	delete m_pStartLabel;
 	removeAllChildren();
 }
 
@@ -99,10 +105,26 @@ void PlayScene::handleEvents()
 void PlayScene::start()
 {
 	SDL_Color yellow = { 255, 255, 0, 255 };
-	m_pStartLabel = new Label("JACKPOT", "Consolas", 80, yellow, 
+	m_pJackpotLabel = new Label("JACKPOT", "Consolas", 80, yellow, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.1f));
-	m_pStartLabel->setParent(this);
-	addChild(m_pStartLabel);
+	m_pJackpotLabel->setParent(this);
+	addChild(m_pJackpotLabel);
+
+	SDL_Color black = { 0, 0, 0, 255 };
+	m_pMoneyLabel = new Label("Player Money", "Consolas", 36, black, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.2f, Config::SCREEN_HEIGHT * 0.2f));
+	m_pMoneyLabel->setParent(this);
+	addChild(m_pMoneyLabel);
+
+	m_pBetLabel = new Label("Bet Amount", "Consolas", 36, black, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.2f, Config::SCREEN_HEIGHT * 0.8f));
+	m_pBetLabel->setParent(this);
+	addChild(m_pBetLabel);
+
+	m_pResultLabel = new Label("Result", "Consolas", 36, black, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.8f));
+	m_pResultLabel->setParent(this);
+	addChild(m_pResultLabel);
 
 	m_pResetButton = new ResetButton();
 	m_pResetButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.2f, Config::SCREEN_HEIGHT * 0.9f));
@@ -118,6 +140,15 @@ void PlayScene::start()
 
 	m_pSlotMachine= new Slot();
 	addChild(m_pSlotMachine);
+
+	m_pReelRight= new Reel();
+	m_pReelRight->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.26f, Config::SCREEN_HEIGHT * 0.5f));
+	addChild(m_pReelRight);
+	m_pReelMid= new Reel();
+	addChild(m_pReelMid);
+	m_pReelLeft= new Reel();
+	m_pReelLeft->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.74f, Config::SCREEN_HEIGHT * 0.5f));
+	addChild(m_pReelLeft);
 }
 
 glm::vec2 PlayScene::getMousePosition()

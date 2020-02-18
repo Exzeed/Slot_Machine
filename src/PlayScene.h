@@ -8,6 +8,7 @@
 #include "QuitButton.h"
 #include "SpinButton.h"
 #include "Slot.h"
+#include "Reel.h"
 
 class PlayScene : public Scene
 {
@@ -29,11 +30,19 @@ public:
 
 private:
 	// Game Objects
-	Label* m_pStartLabel;
+	Label* m_pJackpotLabel;
+	Label* m_pMoneyLabel;
+	Label* m_pBetLabel;
+	Label* m_pResultLabel;
+	
 	ResetButton* m_pResetButton;
 	QuitButton* m_pQuitButton;
 	SpinButton* m_pSpinButton;
+	
 	Slot* m_pSlotMachine;
+	Reel* m_pReelLeft;
+	Reel* m_pReelRight;
+	Reel* m_pReelMid;
 
 	// private data member
 	glm::vec2 m_mousePosition;

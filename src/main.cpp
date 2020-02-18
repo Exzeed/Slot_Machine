@@ -28,7 +28,6 @@
 #include <glm\vec3.hpp>
 #include <glm\gtx\color_space.hpp>
 
-
 #include "TextureManager.h"
 #include "Game.h"
 #include "Config.h"
@@ -41,13 +40,11 @@ int main(int argc, char * args[])
 	Uint32 frameStart, frameTime;
 	UINT32 frames = 0;
 
-
 	// show console
 	AllocConsole();
 	freopen("CON", "w", stdout);
 
-
-	TheGame::Instance()->init("Mail Pilot", 100, 100, Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT, false);
+	TheGame::Instance()->init("Slot Machine", 100, 100, Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT, false);
 
 	// The main Game Loop
 	while (TheGame::Instance()->running())
@@ -68,10 +65,8 @@ int main(int argc, char * args[])
 
 		frames++;
 		TheGame::Instance()->setFrames(frames);
-
 	}
 
 	TheGame::Instance()->clean();
 	return 0;
 }
-
